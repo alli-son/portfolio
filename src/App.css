@@ -66,6 +66,7 @@ header > * {
   background: #149ddd;
   color: #fff;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .navlinks {

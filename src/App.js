@@ -7,7 +7,7 @@ function App() {
   const toggleHeader = () => setToggle(!toggle);
 
   return (
-    <>
+    <React.Fragment>
       <i
         className={
           toggle ? "fas fa-times nav-toggle" : "fas fa-bars nav-toggle"
@@ -124,7 +124,7 @@ function App() {
           </div> */}
         </div>
       </section>
-    </>
+    </React.Fragment>
   );
 }
 
