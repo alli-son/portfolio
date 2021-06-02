@@ -80,20 +80,42 @@ function App() {
       </section> */}
       <section>
         <div className="gallery">
-          <div className="gallery-1">
-            <img src="/images/1.jpg" alt="Gallery" />
-            <img src="/images/2.JPEG" alt="Gallery" />
-            <img src="/images/3.JPEG" alt="Gallery" />
-            <img src="/images/4.JPEG" alt="Gallery" />
-            <img src="/images/5.jpg" alt="Gallery" />
-            <img src="/images/6.jpg" alt="Gallery" />
+          <div className="gallery-photos">
+            <img src="/images/1.jpg" alt="Gallery" className="img1 z1" />
+            <img src="/images/2.JPEG" alt="Gallery" className="img2" />
+            <img src="/images/3.JPEG" alt="Gallery" className="img3" />
+            <img src="/images/4.JPEG" alt="Gallery" className="img4" />
+            <img src="/images/5.jpg" alt="Gallery" className="img5 z1" />
+            <img src="/images/6.jpg" alt="Gallery" className="img6" />
+          </div>
+          <div className="gallery-photos">
+            <img src="/images/7.jpg" alt="Gallery" className="img7" />
+            <img src="/images/8.jpg" alt="Gallery" className="img8" />
+            <img src="/images/9.jpg" alt="Gallery" className="img9" />
+            <img src="/images/10.jpg" alt="Gallery" className="img10" />
+          </div>
+          <div className="gallery-photos">
+            <img src="/images/30.jpg" alt="Gallery" className="img11" />
+            <img src="/images/31.jpg" alt="Gallery" className="img12" />
+            <img src="/images/32.jpg" alt="Gallery" className="img13" />
+            <img src="/images/33.jpeg" alt="Gallery" className="img14" />
+            <img src="/images/34.jpeg" alt="Gallery" className="img15" />
+          </div>
+          <div className="gallery-photos">
+            <img src="/images/25.jpg" alt="Gallery" />
+            <img src="/images/26.jpg" alt="Gallery" />
+            <img src="/images/27.jpg" alt="Gallery" />
+            <img src="/images/28.jpg" alt="Gallery" />
+            <img src="/images/29.jpg" alt="Gallery" />
+          </div>
+          {/* <div>
             <img src="/images/7.jpg" alt="Gallery" />
             <img src="/images/8.jpg" alt="Gallery" />
             <img src="/images/9.jpg" alt="Gallery" />
             <img src="/images/10.jpg" alt="Gallery" />
             <img src="/images/11.jpg" alt="Gallery" />
             <img src="/images/12.jpg" alt="Gallery" />
-          </div>
+          </div> */}
           {/* <div className="gallery-2">
             <img src="/images/13.jpg" alt="Gallery" />
             <img src="/images/14.jpg" alt="Gallery" />
