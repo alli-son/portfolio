@@ -70,7 +70,7 @@ header > * {
 }
 
 .navlinks {
-  padding: 15px;
+  padding: 0 25px;
 }
 
 .navlinks * {
@@ -325,6 +325,96 @@ main section {
   box-sizing: border-box;
 }
 
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.skills-container div {
+  margin: 30px;
+  border: 1px solid #f2f2f2;
+  box-shadow: -20px 20px 20px -15px #ababab;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.skills-container p {
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.skills-container p i {
+  margin: 0 5px;
+}
+
+.skills-container span {
+  font-size: 16px;
+  color: rgba(4, 11, 20, 0.65);
+  font-weight: 500;
+}
+
+.html5,
+.firefox {
+  color: #f60;
+}
+
+.css3,
+.chrome {
+  color: #005fff;
+}
+
+.js {
+  color: #efd81d;
+}
+
+.edge {
+  color: #00b0ff;
+}
+
+.user {
+  color: #5e6c73;
+}
+
+.key {
+  color: #601a03;
+}
+
+.react {
+  color: #15aabf;
+}
+
+.angular {
+  color: #e23c3c;
+}
+
+.projects-content ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-content ul li {
+  line-height: 40px;
+}
+
+.projects-content ul li i {
+  color: #149ddd;
+  margin-right: 10px;
+}
+
+.projects-content ul li span {
+  font-style: italic;
+  font-size: 16px;
+}
+
+.projects-content ul li a {
+  text-decoration: none;
+  margin-left: 20px;
+}
+
 /* MOBILE NAV TOGGLE */
 .nav-toggle {
   position: fixed;
@@ -376,9 +466,15 @@ main section {
 }
 
 @media screen and (max-width: 767px) {
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (max-width: 576px) {
+  .skills-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 /* UNIVERSAL */

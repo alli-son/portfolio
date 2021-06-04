@@ -60,6 +60,12 @@ function App() {
               </li>
               <li>
                 <a className="nav-icons">
+                  <i className="fas fa-award"></i>
+                  <span>Skills</span>
+                </a>
+              </li>
+              <li>
+                <a className="nav-icons">
                   <i className="fas fa-project-diagram"></i>
                   <span>Projects</span>
                 </a>
@@ -231,6 +237,7 @@ function App() {
             </div>
           </div>
         </section>
+
         <section id="resume" className="resume">
           <div className="main-container">
             <div className="container-title">
@@ -369,6 +376,121 @@ function App() {
                       </li>
                     </ul>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" className="skills">
+          <div className="main-container">
+            <div className="container-title">
+              <h2>Skills</h2>
+              <p>
+                I honestly do not know 100% of every web technology. I still
+                have to research and study some of them if I'm stuck on an error
+                or bug. But I can say that I know enough to kick start an
+                application.
+              </p>
+              <div className="skills-container container-content">
+                <div>
+                  <p>
+                    <i className="fab fa-html5 html5"></i>
+                    <i className="fab fa-css3 css3"></i>
+                    <i className="fab fa-js-square js"></i>
+                  </p>
+                  <span>
+                    Versed with best practices of HTML5, CSS3 and JavaScript.
+                  </span>
+                </div>
+                <div>
+                  <p>
+                    <i className="fab fa-chrome chrome"></i>
+                    <i className="fab fa-firefox-browser firefox"></i>
+                    <i className="fab fa-edge edge"></i>
+                  </p>
+                  <span>
+                    Testing with all modern browsers for compatibility issues.
+                  </span>
+                </div>
+                <div>
+                  <p>
+                    <i className="fas fa-server"></i>
+                  </p>
+                  <span>
+                    Connection and usage API, e.g. (GET, POST and DELETE).
+                  </span>
+                </div>
+                <div>
+                  <p>
+                    <i className="fas fa-users user"></i>
+                  </p>
+                  <span>
+                    Making sure that proper UI/UX design is implemented for
+                    better experience for the users.
+                  </span>
+                </div>
+                <div>
+                  <p>
+                    <i className="fas fa-key key"></i>
+                  </p>
+                  <span>
+                    Using token and authentication process for better security.
+                  </span>
+                </div>
+                <div>
+                  <p>
+                    <i className="fab fa-react react"></i>
+                    <i className="fab fa-angular angular"></i>
+                  </p>
+                  <span>
+                    Modern front end frameworks for better SPA experience.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" className="projects">
+          <div className="main-container">
+            <div className="container-title">
+              <h2>Projects</h2>
+              <p>
+                Short list of some projects that I've done. Some are for clients
+                and others for personal growth.
+              </p>
+              <div className="container-content">
+                <div className="projects-content">
+                  <ul>
+                    <li>
+                      <i className="fas fa-chevron-right"></i>
+                      <strong>A&A Travel and Tours</strong> -{" "}
+                      <span>
+                        A business website that details their services with
+                        travel and tours
+                      </span>
+                      <br />
+                      <a href="#">www.aatravelandtours.com</a>
+                    </li>
+                    <li>
+                      <i className="fas fa-chevron-right"></i>
+                      <strong>Sportion Dafabet</strong> -{" "}
+                      <span>
+                        A webpage describing the services of their online
+                        betting site
+                      </span>
+                      <br />
+                      <a href="#">www.sportiondafabet.com</a>
+                    </li>
+                    <li>
+                      <i className="fas fa-chevron-right"></i>
+                      <strong>Dork (Dose Of Random Kwote)</strong> -{" "}
+                      <span>A just for fun personal project of mine</span>
+                      <br />
+                      <a href="#">www.dork.com</a>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
