@@ -601,7 +601,6 @@ function App() {
                       <i className="fab fa-viber"></i>
                       <span>Viber:</span>
                       <span>09275124936 (Alli)</span>
-                      <a onClick={scrollToTop}>TOP!</a>
                     </li>
                   </ul>
                 </div>
