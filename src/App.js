@@ -1,13 +1,84 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import ReactJsTyping from "reactjs-typing-effect";
 import "./App.css";
 
 function App() {
   const [toggle, setToggle] = useState(false);
+  const [scroll, setScroll] = useState(false);
+  const titles = ["A Freelancer", "A Developer", "An Enthusiast"];
+  const items = [
+    {
+      id: 0,
+      target: "Home",
+      icon: "fas fa-home",
+    },
+    {
+      id: 1,
+      target: "About",
+      icon: "fas fa-user-tie",
+    },
+    {
+      id: 2,
+      target: "Resume",
+      icon: "far fa-file-alt",
+    },
+    {
+      id: 3,
+      target: "Skills",
+      icon: "fas fa-award",
+    },
+    {
+      id: 4,
+      target: "Projects",
+      icon: "fas fa-project-diagram",
+    },
+    {
+      id: 5,
+      target: "Contact",
+      icon: "far fa-address-book",
+    },
+  ];
+
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
+  useEffect(() => {
+    scrollToTop();
+    window.addEventListener("scroll", () => {
+      setScroll(window.scrollY > 500);
+    });
+  }, []);
 
   const toggleHeader = () => setToggle(!toggle);
 
-  const titles = ["A Freelancer", "A Developer", "An Enthusiast"];
+  const NavLink = ({ id, target, icon, isActive, onClick }) => (
+    <a
+      href={`#${target.toLowerCase()}`}
+      onClick={useCallback(() => onClick(id), [id])}
+      className={`nav-icons ${isActive ? "activeIcon activeNav" : ""}`}
+    >
+      <i className={icon}></i>
+      <span>{target}</span>
+    </a>
+  );
+
+  const Nav = ({ menuItems }) => {
+    const [active, setActive] = useState(null);
+    return (
+      <ul>
+        {menuItems.map((item) => (
+          <li key={item.id}>
+            <NavLink
+              {...item}
+              onClick={setActive}
+              isActive={active === item.id}
+            ></NavLink>
+          </li>
+        ))}
+      </ul>
+    );
+  };
 
   return (
     <React.Fragment>
@@ -39,49 +110,53 @@ function App() {
             </div>
           </div>
           <nav className="navlinks">
-            <ul>
+            <Nav menuItems={items}></Nav>
+            {/* <ul>
               <li>
-                <a className="nav-icons">
+                <a className="nav-icons" href="#landing">
                   <i className="fas fa-home"></i>
                   <span>Home</span>
                 </a>
               </li>
               <li>
-                <a className="nav-icons">
+                <a className="nav-icons" href="#about">
                   <i className="fas fa-user-tie"></i>
                   <span>About</span>
                 </a>
               </li>
               <li>
-                <a className="nav-icons">
+                <a className="nav-icons" href="#resume">
                   <i className="far fa-file-alt"></i>
                   <span>Resume</span>
                 </a>
               </li>
               <li>
-                <a className="nav-icons">
+                <a className="nav-icons" href="#skills">
                   <i className="fas fa-award"></i>
                   <span>Skills</span>
                 </a>
               </li>
               <li>
-                <a className="nav-icons">
+                <a className="nav-icons" href="#projects">
                   <i className="fas fa-project-diagram"></i>
                   <span>Projects</span>
                 </a>
               </li>
               <li>
-                <a className="nav-icons">
+                <a className="nav-icons" href="#contact">
                   <i className="far fa-address-book"></i>
                   <span>Contact</span>
                 </a>
               </li>
-            </ul>
+            </ul> */}
           </nav>
         </div>
       </header>
 
-      <section className={toggle ? "ml330 landing-page" : "landing-page"}>
+      <section
+        id="home"
+        className={toggle ? "ml330 landing-page" : "landing-page"}
+      >
         <div>
           <h1>Allison Feliciano</h1>
           <p>
@@ -496,7 +571,54 @@ function App() {
             </div>
           </div>
         </section>
+
+        <section id="contact" className="contact">
+          <div className="main-container">
+            <div className="container-title">
+              <h2>Contact</h2>
+              <p>Feel free to contact me.</p>
+              <div className="container-content">
+                <div className="contact-details">
+                  <ul>
+                    <li>
+                      <i className="far fa-envelope"></i>
+                      <span>Email:</span>
+                      <a href="mailto:allisonlaya.feliciano@gmail.com">
+                        allisonlaya.feliciano@gmail.com
+                      </a>
+                    </li>
+                    <li>
+                      <i className="fas fa-phone"></i>
+                      <span>Phone:</span>
+                      <span>09175394025 / 09275124936</span>
+                    </li>
+                    <li>
+                      <i className="fab fa-telegram"></i>
+                      <span>Telegram:</span>
+                      <span>09275124936 (Alli)</span>
+                    </li>
+                    <li>
+                      <i className="fab fa-viber"></i>
+                      <span>Viber:</span>
+                      <span>09275124936 (Alli)</span>
+                      <a onClick={scrollToTop}>TOP!</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
+
+      <i
+        className={
+          scroll
+            ? "scrollTop fas fa-arrow-up activeScroll"
+            : "scrollTop fas fa-arrow-up"
+        }
+        onClick={scrollToTop}
+      ></i>
     </React.Fragment>
   );
 }
