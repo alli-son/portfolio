@@ -107,13 +107,21 @@ header > * {
   color: #149ddd;
 }
 
-.activeIcon i {
+.active i {
+  color: #149ddd !important;
+}
+
+.active span {
+  color: #fff;
+}
+
+/* .activeIcon i {
   color: #149ddd !important;
 }
 
 .activeNav span {
   color: #fff;
-}
+} */
 
 .navlinks a i {
   font-size: 24px;

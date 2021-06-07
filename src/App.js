@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ReactJsTyping from "reactjs-typing-effect";
 import "./App.css";
 
@@ -6,79 +6,110 @@ function App() {
   const [toggle, setToggle] = useState(false);
   const [scroll, setScroll] = useState(false);
   const titles = ["A Freelancer", "A Developer", "An Enthusiast"];
-  const items = [
-    {
-      id: 0,
-      target: "Home",
-      icon: "fas fa-home",
-    },
-    {
-      id: 1,
-      target: "About",
-      icon: "fas fa-user-tie",
-    },
-    {
-      id: 2,
-      target: "Resume",
-      icon: "far fa-file-alt",
-    },
-    {
-      id: 3,
-      target: "Skills",
-      icon: "fas fa-award",
-    },
-    {
-      id: 4,
-      target: "Projects",
-      icon: "fas fa-project-diagram",
-    },
-    {
-      id: 5,
-      target: "Contact",
-      icon: "far fa-address-book",
-    },
-  ];
+  // const items = [
+  //   {
+  //     id: 0,
+  //     target: "Home",
+  //     icon: "fas fa-home",
+  //   },
+  //   {
+  //     id: 1,
+  //     target: "About",
+  //     icon: "fas fa-user-tie",
+  //   },
+  //   {
+  //     id: 2,
+  //     target: "Resume",
+  //     icon: "far fa-file-alt",
+  //   },
+  //   {
+  //     id: 3,
+  //     target: "Skills",
+  //     icon: "fas fa-award",
+  //   },
+  //   {
+  //     id: 4,
+  //     target: "Projects",
+  //     icon: "fas fa-project-diagram",
+  //   },
+  //   {
+  //     id: 5,
+  //     target: "Contact",
+  //     icon: "far fa-address-book",
+  //   },
+  // ];
+
+  const showBackToTop = () => {
+    if (window.scrollY > 500) {
+      setScroll(true);
+    } else {
+      setScroll(false);
+    }
+  };
 
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
 
-  useEffect(() => {
-    scrollToTop();
-    window.addEventListener("scroll", () => {
-      setScroll(window.scrollY > 500);
-    });
-  }, []);
+  window.addEventListener("scroll", showBackToTop);
 
   const toggleHeader = () => setToggle(!toggle);
 
-  const NavLink = ({ id, target, icon, isActive, onClick }) => (
-    <a
-      href={`#${target.toLowerCase()}`}
-      onClick={useCallback(() => onClick(id), [id])}
-      className={`nav-icons ${isActive ? "activeIcon activeNav" : ""}`}
-    >
-      <i className={icon}></i>
-      <span>{target}</span>
-    </a>
-  );
+  const [active, setActive] = useState(false);
 
-  const Nav = ({ menuItems }) => {
-    const [active, setActive] = useState(null);
-    return (
-      <ul>
-        {menuItems.map((item) => (
-          <li key={item.id}>
-            <NavLink
-              {...item}
-              onClick={setActive}
-              isActive={active === item.id}
-            ></NavLink>
-          </li>
-        ))}
-      </ul>
-    );
-  };
+  // !active ?
+
+  // const addActiveClass = () => {
+  //   const el = document.getElementsByClassName("navHome")[0];
+  //   if (!active) {
+  //     el.classList.add("active");
+  //   } else {
+  //     el.classList.remove("active");
+  //   }
+  // };
+
+  useEffect(() => {
+    showBackToTop();
+  }, []);
+
+  // const toggleActiveNav = (e) => {
+  //   let defaultClass = "nav-icons";
+  //   let allClasses = document.getElementsByClassName("nav-icons active");
+  //   if (allClasses) {
+  //     while (allClasses[0]) {
+  //       allClasses[0].remove("active");
+  //     }
+  //   }
+  //   e.target.className = defaultClass.replace("nav-icons", "nav-icons active");
+  // };
+
+  // const NavLink = ({ id, target, icon, isActive, onClick }) => (
+  //   <a
+  //     href={`#${target.toLowerCase()}`}
+  //     onClick={useCallback(() => onClick(id), [id])}
+  //     className={`nav-icons ${isActive ? "activeIcon activeNav" : ""}`}
+  //   >
+  //     <i className={icon}></i>
+  //     <span>{target}</span>
+  //   </a>
+  // );
+
+  // const Nav = ({ menuItems }) => {
+  //   let [active, setActive] = useState(0);
+  //   return (
+  //     <ul>
+  //       {menuItems.map((item) => (
+  //         <li key={item.id}>
+  //           <NavLink
+  //             {...item}
+  //             onClick={setActive}
+  //             isActive={active === item.id}
+  //           ></NavLink>
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // };
 
   return (
     <React.Fragment>
@@ -95,60 +126,108 @@ function App() {
             <img src="/images/profile_picture.jpg" alt="Pic" />
             <h1>Allison Feliciano</h1>
             <div>
-              <a>
+              <a href="#contact">
                 <i className="fab fa-telegram"></i>
               </a>
-              <a>
+              <a href="#contact">
                 <i className="fab fa-viber"></i>
               </a>
-              <a>
+              <a href="#contact">
                 <i className="far fa-envelope"></i>
               </a>
-              <a>
+              <a href="#contact">
                 <i className="fas fa-phone"></i>
               </a>
             </div>
           </div>
           <nav className="navlinks">
-            <Nav menuItems={items}></Nav>
-            {/* <ul>
+            {/* <Nav menuItems={items}></Nav> */}
+            <ul>
               <li>
-                <a className="nav-icons" href="#landing">
+                <a
+                  href="#home"
+                  className={
+                    active === "home" ? "nav-icons active" : "nav-icons"
+                  }
+                  onClick={() => {
+                    setActive("home");
+                  }}
+                >
                   <i className="fas fa-home"></i>
                   <span>Home</span>
                 </a>
               </li>
               <li>
-                <a className="nav-icons" href="#about">
+                <a
+                  href="#about"
+                  className={
+                    active === "about" ? "nav-icons active" : "nav-icons"
+                  }
+                  onClick={() => {
+                    setActive("about");
+                  }}
+                >
                   <i className="fas fa-user-tie"></i>
                   <span>About</span>
                 </a>
               </li>
               <li>
-                <a className="nav-icons" href="#resume">
+                <a
+                  href="#resume"
+                  className={
+                    active === "resume" ? "nav-icons active" : "nav-icons"
+                  }
+                  onClick={() => {
+                    setActive("resume");
+                  }}
+                >
                   <i className="far fa-file-alt"></i>
                   <span>Resume</span>
                 </a>
               </li>
               <li>
-                <a className="nav-icons" href="#skills">
+                <a
+                  href="#skills"
+                  className={
+                    active === "skills" ? "nav-icons active" : "nav-icons"
+                  }
+                  onClick={() => {
+                    setActive("skills");
+                  }}
+                >
                   <i className="fas fa-award"></i>
                   <span>Skills</span>
                 </a>
               </li>
               <li>
-                <a className="nav-icons" href="#projects">
+                <a
+                  href="#projects"
+                  className={
+                    active === "projects" ? "nav-icons active" : "nav-icons"
+                  }
+                  onClick={() => {
+                    setActive("projects");
+                  }}
+                >
                   <i className="fas fa-project-diagram"></i>
                   <span>Projects</span>
                 </a>
               </li>
               <li>
-                <a className="nav-icons" href="#contact">
+                <a
+                  href="#contact"
+                  className={
+                    active === "contact" ? "nav-icons active" : "nav-icons"
+                  }
+                  onClick={() => {
+                    setActive("contact");
+                  }}
+                >
                   <i className="far fa-address-book"></i>
                   <span>Contact</span>
                 </a>
               </li>
-            </ul> */}
+            </ul>
           </nav>
         </div>
       </header>
@@ -330,7 +409,7 @@ function App() {
               <div className="resume">
                 <div>
                   <div className="resume-info">
-                    <h4>Freelance front end web developer</h4>
+                    <h4>Freelance web developer</h4>
                     <h5>2017 - Present</h5>
                     <p>Work from home setup</p>
                     <ul>
@@ -341,6 +420,7 @@ function App() {
                       <li>Mobile first code layout</li>
                       <li>Browser compatibilty testing</li>
                       <li>Using ReactJS as the front end framework</li>
+                      <li>Python and Django for the back end</li>
                     </ul>
                   </div>
                   <div className="resume-info">
@@ -546,7 +626,7 @@ function App() {
                         travel and tours
                       </span>
                       <br />
-                      <a href="#">www.aatravelandtours.com</a>
+                      <a href="www.google.com">www.aatravelandtours.com</a>
                     </li>
                     <li>
                       <i className="fas fa-chevron-right"></i>
@@ -556,14 +636,14 @@ function App() {
                         betting site
                       </span>
                       <br />
-                      <a href="#">www.sportiondafabet.com</a>
+                      <a href="www.google.com">www.sportiondafabet.com</a>
                     </li>
                     <li>
                       <i className="fas fa-chevron-right"></i>
                       <strong>Dork (Dose Of Random Kwote)</strong> -{" "}
                       <span>A just for fun personal project of mine</span>
                       <br />
-                      <a href="#">www.dork.com</a>
+                      <a href="www.google.com">www.dork.com</a>
                     </li>
                   </ul>
                 </div>
