@@ -420,7 +420,7 @@ function App() {
                       <li>Mobile first code layout</li>
                       <li>Browser compatibilty testing</li>
                       <li>Using ReactJS as the front end framework</li>
-                      <li>Python and Django for the back end</li>
+                      <li>Python/Django and NodeJS for the back end</li>
                     </ul>
                   </div>
                   <div className="resume-info">
