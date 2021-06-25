@@ -626,7 +626,13 @@ function App() {
                         travel and tours
                       </span>
                       <br />
-                      <a href="www.google.com">www.aatravelandtours.com</a>
+                      <a
+                        href="https://aatraveltours.netlify.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        www.aatravelandtours.com
+                      </a>
                     </li>
                     <li>
                       <i className="fas fa-chevron-right"></i>
@@ -636,14 +642,20 @@ function App() {
                         betting site
                       </span>
                       <br />
-                      <a href="www.google.com">www.sportiondafabet.com</a>
+                      <a
+                        href="https://sportiondafabet.netlify.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        www.sportiondafabet.com
+                      </a>
                     </li>
                     <li>
                       <i className="fas fa-chevron-right"></i>
-                      <strong>Dork (Dose Of Random Kwote)</strong> -{" "}
+                      <strong>Dork (Dose Of Random Kwōts)</strong> -{" "}
                       <span>A just for fun personal project of mine</span>
                       <br />
-                      <a href="www.google.com">www.dork.com</a>
+                      <a href="https://dorkdork.netlify.app/">www.dork.com</a>
                     </li>
                   </ul>
                 </div>
