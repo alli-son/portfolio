@@ -123,7 +123,7 @@ function App() {
       <header className={toggle ? "header-active" : ""}>
         <div>
           <div className="profile">
-            <img src="/images/profile_picture.jpg" alt="Pic" />
+            <img src="./images/profile_picture.jpg" alt="Pic" />
             <h1>Allison Feliciano</h1>
             <div>
               <a href="#contact">
