@@ -541,6 +541,18 @@ main section {
   .skills-container {
     grid-template-columns: repeat(1, 1fr);
   }
+
+  .container-content {
+    padding: 0;
+  }
+
+  .personal-info div {
+    margin-left: 0px;
+  }
+
+  .contact-details ul li span {
+    margin-right: 4px;
+  }
 }
 
 /* UNIVERSAL */
