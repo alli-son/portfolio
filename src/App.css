@@ -553,6 +553,10 @@ main section {
   .contact-details ul li span {
     margin-right: 4px;
   }
+
+  .contact-details ul li i {
+    margin-right: 5px;
+  }
 }
 
 /* UNIVERSAL */
