@@ -655,7 +655,9 @@ function App() {
                       <strong>Dork (Dose Of Random Kwōts)</strong> -{" "}
                       <span>A just for fun personal project of mine</span>
                       <br />
-                      <a href="https://dorkdork.netlify.app/">www.dork.com</a>
+                      <a href="https://dorkdork.netlify.app/" target="_blank">
+                        www.dork.com
+                      </a>
                     </li>
                   </ul>
                 </div>
