@@ -324,8 +324,8 @@ function App() {
                       </li>
                       <li>
                         <i className="fas fa-chevron-right"></i>
-                        <strong>Religion:</strong>
-                        <span>Catholic</span>
+                        <strong>Course:</strong>
+                        <span>Computer Science and Information System</span>
                       </li>
                       <li>
                         <i className="fas fa-chevron-right"></i>
@@ -343,8 +343,8 @@ function App() {
                       </li>
                       <li>
                         <i className="fas fa-chevron-right"></i>
-                        <strong>Degree:</strong>
-                        <span>Bachelor</span>
+                        <strong>Religion:</strong>
+                        <span>Catholic</span>
                       </li>
                       <li>
                         <i className="fas fa-chevron-right"></i>
