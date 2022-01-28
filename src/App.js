@@ -409,6 +409,28 @@ function App() {
               <div className="resume">
                 <div>
                   <div className="resume-info">
+                    <h4>Assistant Consultant</h4>
+                    <h5>October 2021 – Present</h5>
+                    <p>
+                      <strong>Tata Consulting Services</strong>
+                    </p>
+                    <p>Temporary work from home setup</p>
+                    <ul>
+                      <li>
+                        Responsible for the HTML, CSS and JavaScript part of the
+                        web application
+                      </li>
+                      <li>Mobile first code layout</li>
+                      <li>Browser compatibility testing</li>
+                      <li>Using ReactJS as the front end framework</li>
+                      <li>Integration with back end API’s</li>
+                      <li>Complying with the UX design requirements</li>
+                      <li>Optimization of loading pages</li>
+                      <li>Addition of features within the application</li>
+                      <li>Being agile with ongoing changes from the client</li>
+                    </ul>
+                  </div>
+                  <div className="resume-info">
                     <h4>Freelance web developer</h4>
                     <h5>2017 - Present</h5>
                     <p>Work from home setup</p>
